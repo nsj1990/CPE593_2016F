@@ -2,13 +2,13 @@ public class LinkedList {
 	private static class Node { // LinkedList.Node
 		// by default, an inner class automatically contains a pointer to the outer class
 		// static classes do not
-    int val;
+    		int val;
 		Node next;
 		//		public Node( ...) {}
 	}
 	private Node head;
 	public LinkedList() { // O(1)
-    head = null;
+    	head = null;
 	}
 
 	// no need to do this in Java, the garbage collector handles the memory
@@ -39,13 +39,13 @@ public class LinkedList {
 	}
 	public void insert(int i, int v) {
 		Node p = head;
-    while (i > 0) {
+   		while (i > 0) {
 			if (p == null)
 				return;
 			p = p.next;
-      i--;
+      		i--;
 		}
-    Node temp = new Node();
+   		Node temp = new Node();
 		temp.val = v;
 		temp.next = p.next; // remember the ones after p!
 		p.next = temp;
@@ -81,7 +81,7 @@ public class LinkedList {
 			b.append(p.val).append(","); //O(n)
 		}
 		b.append(']');
-    return b.toString();
+    		return b.toString();
 	}
 
 	public int size() { //O(n)
@@ -96,7 +96,7 @@ public class LinkedList {
 		for ( ; i > 0; i--, p = p.next)
 			if (p == null)
 				throw new IndexOutOfBoundsException("LinkedList index " + i);
-    return p.val;
+    		return p.val;
 	}
 	// this one is bad, just an example of what NOT to do.
 	public String toString2() { // horrible O(n^2)
@@ -107,7 +107,7 @@ public class LinkedList {
 			b.append(get(i)).append(","); //O(n)
 		}
 		b.append(']');
-    return b.toString();
+    		return b.toString();
 	}
 
 	public static void main(String[]args) {
